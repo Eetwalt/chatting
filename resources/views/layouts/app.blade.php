@@ -11,6 +11,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -34,6 +35,19 @@
             {{ $slot }}
         </main>
     </div>
+    <script type="text/javascript">
+        var options = {
+            width: "100%",
+            height: "100%",
+            channel: "eslcs",
+            // video: "<video ID>",
+            // collection: "<collection ID>",
+            // only needed if your site is also embedded on embed.example.com and othersite.example.com
+            // parent: ["embed.example.com", "othersite.example.com"]
+        };
+        var player = new Twitch.Player("player", options);
+        player.setVolume(0.5);
+    </script>
 </body>
 
 </html>
